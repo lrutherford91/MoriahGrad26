@@ -70,14 +70,10 @@
         padding: 64px 0;
       }
       @media (min-width: 640px) {
-        .section-block {
-          padding: 80px 0;
-        }
+        .section-block { padding: 80px 0; }
       }
       @media (min-width: 1024px) {
-        .section-block {
-          padding: 96px 0;
-        }
+        .section-block { padding: 96px 0; }
       }
 
       .section-divider {
@@ -93,6 +89,14 @@
         padding: 40px 28px;
         margin: 0 auto 28px;
         max-width: 640px;
+      }
+
+      .hero-wrap {
+        max-width: 760px;
+        margin: 0 auto;
+        border: 1px solid #e6e2dc;
+        border-radius: 28px;
+        padding: 34px 26px;
       }
 
       .form-card {
@@ -117,6 +121,10 @@
           padding: 20px;
           border-radius: 16px;
         }
+        .hero-wrap {
+          padding: 26px 18px;
+          border-radius: 22px;
+        }
       }
 
       .btn-primary,
@@ -137,22 +145,10 @@
         transition: all 0.25s ease;
         text-align: center;
       }
-      .btn-primary {
-        background: #114488;
-        color: #ffffff;
-      }
-      .btn-primary:hover {
-        opacity: 0.92;
-        transform: scale(1.02);
-      }
-      .btn-secondary {
-        background: #ffffff;
-        color: #114488;
-      }
-      .btn-secondary:hover {
-        background: #f9f9f7;
-        transform: scale(1.02);
-      }
+      .btn-primary { background: #114488; color: #ffffff; }
+      .btn-primary:hover { opacity: 0.92; transform: scale(1.02); }
+      .btn-secondary { background: #ffffff; color: #114488; }
+      .btn-secondary:hover { background: #f9f9f7; transform: scale(1.02); }
 
       @media (max-width: 640px) {
         .btn-primary, .btn-secondary {
@@ -172,18 +168,13 @@
         transform: translateY(0);
       }
       @media (prefers-reduced-motion: reduce) {
-        .scroll-animate {
-          opacity: 1 !important;
-          transform: none !important;
-          transition: none !important;
-        }
+        .scroll-animate { opacity: 1 !important; transform: none !important; transition: none !important; }
       }
     </style>
   </head>
 
   <body class="h-full font-serif-body">
     <div id="app" class="h-full w-full overflow-auto">
-
       <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
           <div class="py-4 sm:py-5 text-center">
@@ -205,29 +196,31 @@
       <!-- HOME -->
       <section id="home" class="section-block">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center scroll-animate">
-          <h1 class="font-script text-5xl sm:text-6xl lg:text-7xl shimmer-accent text-center" style="line-height: 1.2; font-weight: 400; color: #114488; letter-spacing: 0.01em; margin-bottom: 0.4rem;">
-            <span class="inline-block" style="background: #f7f5f1; padding: 0.18rem 0.8rem; border-radius: 999px;">
-              A Celebration of Achievement
-            </span>
-          </h1>
-          <p class="font-serif-body text-sm sm:text-base font-light text-center" style="color: #6b7280; letter-spacing: 0.04em; text-transform: uppercase; margin: 0.1rem 0 0.1rem 0;">
-            <span class="inline-block" style="background: #f7f5f1; padding: 0.2rem 0.9rem; border-radius: 999px; font-size: 1.05em;">
-              for
-            </span>
-          </p>
-          <p class="font-script text-3xl sm:text-4xl lg:text-5xl text-center" style="color: #114488; letter-spacing: 0.02em; white-space: nowrap; margin-top: 0.2rem; margin-bottom: 1.5rem;">
-            <span class="inline-block" style="background: #f7f5f1; padding: 0.18rem 0.9rem; border-radius: 999px;">
-              Moriah A. Wallace
-            </span>
-          </p>
+          <div class="hero-wrap">
+            <h1 class="font-script text-5xl sm:text-6xl lg:text-7xl shimmer-accent text-center" style="line-height: 1.2; font-weight: 400; color: #114488; letter-spacing: 0.01em; margin-bottom: 0.4rem;">
+              <span class="inline-block" style="background: #f7f5f1; padding: 0.18rem 0.8rem; border-radius: 999px;">
+                A Celebration of Achievement
+              </span>
+            </h1>
+            <p class="font-serif-body text-sm sm:text-base font-light text-center" style="color: #6b7280; letter-spacing: 0.04em; text-transform: uppercase; margin: 0.1rem 0 0.1rem 0;">
+              <span class="inline-block" style="background: #f7f5f1; padding: 0.2rem 0.9rem; border-radius: 999px; font-size: 1.05em;">
+                for
+              </span>
+            </p>
+            <p class="font-script text-3xl sm:text-4xl lg:text-5xl text-center" style="color: #114488; letter-spacing: 0.02em; white-space: nowrap; margin-top: 0.2rem; margin-bottom: 1.5rem;">
+              <span class="inline-block" style="background: #f7f5f1; padding: 0.18rem 0.9rem; border-radius: 999px;">
+                Moriah A. Wallace
+              </span>
+            </p>
 
-          <div class="content-section">
-            <p id="hero-dates" class="font-serif-display text-lg sm:text-xl font-light mb-10" style="letter-spacing: 0.03em; color: #6b7280;">
-  May 23–24, 2026
-</p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5">
-              <a id="hero-rsvp-btn" href="https://form.jotform.com/260324809688063" target="_blank" rel="noopener noreferrer" class="btn-primary"> RSVP NOW </a>
-              <a id="hero-wishes-btn" href="#well-wishes" class="btn-secondary"> SEND WELL WISHES </a>
+            <div class="content-section">
+              <p id="hero-dates" class="font-serif-display text-lg sm:text-xl font-light mb-10" style="letter-spacing: 0.03em; color: #6b7280;">
+                May 23–24, 2026
+              </p>
+              <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5">
+                <a id="hero-rsvp-btn" href="https://form.jotform.com/260324809688063" target="_blank" rel="noopener noreferrer" class="btn-primary"> RSVP NOW </a>
+                <a id="hero-wishes-btn" href="#well-wishes" class="btn-secondary"> SEND WELL WISHES </a>
+              </div>
             </div>
           </div>
         </div>
