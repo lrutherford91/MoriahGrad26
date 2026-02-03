@@ -1,404 +1,534 @@
-<!doctype html> 
+<!doctype html>
 <html lang="en" class="h-full">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Celebrating Moriah Wallace | Graduation 2026</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      box-sizing: border-box;
-      overflow-x: hidden;
-    }
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebrating Moriah Wallace | Graduation 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        box-sizing: border-box;
+        overflow-x: hidden;
+        background-color: #FAFAF8;
+        color: #333333;
+      }
+      *, *::before, *::after {
+        box-sizing: inherit;
+      }
 
-    .page-section { display: block; }
-    .is-hidden { display: none !important; }
+      .hidden,
+      .is-hidden {
+        display: none !important;
+      }
 
-    .font-script {
-      font-family: 'Allura', cursive;
-      font-weight: 400;
-    }
-    .font-serif-display,
-    .font-serif-body,
-    .font-sans-ui {
-      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-    }
+      .page-section {
+        display: block;
+      }
 
-    .header-layout {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-    }
-    .header-layout > button { justify-self: start; }
-    .header-layout > .font-script { justify-self: center; }
+      .font-script {
+        font-family: 'Allura', cursive;
+        font-weight: 400;
+      }
+      .font-serif-display,
+      .font-serif-body,
+      .font-sans-ui {
+        font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+      }
 
-    .nav-link {
-      position: relative;
-      transition: color 0.3s ease;
-    }
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 0;
-      height: 1px;
-      background: #114488;
-      transition: width 0.3s ease;
-    }
-    .nav-link:hover { color: #114488; }
-    .nav-link:hover::after,
-    .nav-link.active::after { width: 24px; }
-    .nav-link.active { color: #114488; }
+      .header-grid {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        gap: 16px;
+      }
+      .header-title {
+        justify-self: center;
+        white-space: nowrap;
+      }
+      .header-nav {
+        justify-self: end;
+      }
+      @media (max-width: 1024px) {
+        .header-grid {
+          grid-template-columns: auto 1fr auto;
+        }
+      }
 
-    .shimmer-accent {
-      position: relative;
-      display: inline-block;
-    }
-    .shimmer-accent::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 110%;
-      height: 110%;
-      background: radial-gradient(ellipse at center, rgba(216, 213, 207, 0.07) 0%, transparent 70%);
-      pointer-events: none;
-      z-index: -1;
-    }
+      .nav-link {
+        position: relative;
+        transition: color 0.3s ease;
+      }
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 1px;
+        background: #114488;
+        transition: width 0.3s ease;
+      }
+      .nav-link:hover {
+        color: #114488;
+      }
+      .nav-link:hover::after,
+      .nav-link.active::after {
+        width: 24px;
+      }
+      .nav-link.active {
+        color: #114488;
+      }
 
-    .content-section {
-      background: #ffffff;
-      padding: 48px 32px;
-      margin: 0 auto 40px;
-      max-width: 640px;
-    }
+      .shimmer-accent {
+        position: relative;
+        display: inline-block;
+      }
+      .shimmer-accent::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 110%;
+        height: 110%;
+        background: radial-gradient(ellipse at center, rgba(216, 213, 207, 0.07) 0%, transparent 70%);
+        pointer-events: none;
+        z-index: -1;
+      }
 
-    .form-card {
-      background: #ffffff;
-      padding: 28px;
-      border-radius: 20px;
-      max-width: 720px;
-      margin: 0 auto;
-    }
-    .form-card iframe {
-      display: block;
-      width: 100%;
-      border: none;
-    }
-
-    @media (max-width: 640px) {
       .content-section {
-        padding: 36px 24px;
-        margin-bottom: 32px;
+        background: #ffffff;
+        padding: 48px 32px;
+        margin: 0 auto 40px;
+        max-width: 640px;
       }
+
       .form-card {
-        padding: 20px;
-        border-radius: 16px;
+        background: #ffffff;
+        padding: 28px;
+        border-radius: 20px;
+        max-width: 720px;
+        margin: 0 auto;
       }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .animate-fade-in { animation: fadeInUp 0.6s ease forwards; }
-    .animate-delay-1 { animation-delay: 0.1s; }
-    .animate-delay-2 { animation-delay: 0.15s; }
-
-    .scroll-animate {
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    .scroll-animate.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .btn-primary, .btn-secondary {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 500;
-      font-size: 0.875rem;
-      letter-spacing: 0.08em;
-      padding: 16px 40px;
-      border-radius: 9999px;
-      border: 2px solid #114488;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      min-height: 52px;
-      transition: all 0.25s ease;
-      text-align: center;
-    }
-    .btn-primary { background: #114488; color: #FFFFFF; }
-    .btn-primary:hover { opacity: 0.92; transform: scale(1.02); }
-    .btn-secondary { background: #FFFFFF; color: #114488; }
-    .btn-secondary:hover { background: #f9f9f7; transform: scale(1.02); }
-
-    @media (max-width: 640px) {
-      .btn-primary, .btn-secondary {
+      .form-card iframe {
+        display: block;
         width: 100%;
-        padding: 14px 32px;
-        font-size: 0.8125rem;
-      }
-    }
-  </style>
- </head>
-
- <body class="h-full font-serif-body" style="background-color: #FAFAF8; color: #333;">
-  <div id="app" class="h-full w-full overflow-auto">
-
-   <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-     <div class="header-layout h-16 sm:h-20 w-full">
-      <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-600 hover:text-gray-900">
-       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
-      </button>
-
-      <div class="font-script text-2xl sm:text-3xl" style="color: #114488; letter-spacing: 0.02em; font-weight: 600;">
-       Class of 2026
-      </div>
-
-      <nav class="hidden lg:flex items-center space-x-8 justify-self-end">
-        <a href="#home" class="nav-link font-sans-ui text-sm font-normal transition-colors active" style="color: #6b7280;" data-nav="home">Home</a>
-        <a href="#rsvp-page" class="nav-link font-sans-ui text-sm font-normal transition-colors" style="color: #6b7280;" data-nav="rsvp">RSVP</a>
-        <a href="#ceremony" class="nav-link font-sans-ui text-sm font-normal transition-colors" style="color: #6b7280;" data-nav="ceremony">Ceremony Details</a>
-        <a href="#travel" class="nav-link font-sans-ui text-sm font-normal transition-colors" style="color: #6b7280;" data-nav="travel">Travel</a>
-        <a href="#gifts" class="nav-link font-sans-ui text-sm font-normal transition-colors" style="color: #6b7280;" data-nav="gifts">Gifts</a>
-        <a href="#well-wishes" class="nav-link font-sans-ui text-sm font-normal transition-colors" style="color: #6b7280;" data-nav="wishes">Well Wishes</a>
-      </nav>
-     </div>
-
-     <div id="mobile-menu" class="hidden lg:hidden pb-6 pt-2">
-      <nav class="flex flex-col space-y-4">
-        <a href="#home" class="font-sans-ui text-sm font-normal py-3 transition-colors" style="color: #6b7280;" data-nav="home">Home</a>
-        <a href="#rsvp-page" class="font-sans-ui text-sm font-normal py-3 transition-colors" style="color: #6b7280;" data-nav="rsvp">RSVP</a>
-        <a href="#ceremony" class="font-sans-ui text-sm font-normal py-3 transition-colors" style="color: #6b7280;" data-nav="ceremony">Ceremony Details</a>
-        <a href="#travel" class="font-sans-ui text-sm font-normal py-3 transition-colors" style="color: #6b7280;" data-nav="travel">Travel</a>
-        <a href="#gifts" class="font-sans-ui text-sm font-normal py-3 transition-colors" style="color: #6b7280;" data-nav="gifts">Gifts</a>
-        <a href="#well-wishes" class="font-sans-ui text-sm font-normal py-3 transition-colors" style="color: #6b7280;" data-nav="wishes">Well Wishes</a>
-      </nav>
-     </div>
-    </div>
-   </header>
-
-   <!-- HOME -->
-   <section id="home" class="page-section">
-    <div class="py-20 sm:py-32 lg:py-40" style="background: #FAFAF8; position: relative; overflow: hidden;">
-     <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center" style="position: relative; z-index: 1;">
-      <h1 class="opacity-0 animate-fade-in font-script text-6xl sm:text-7xl lg:text-8xl mb-10 sm:mb-14 lg:mb-16 shimmer-accent" style="line-height: 1.3; font-weight: 400; color: #114488;">A Celebration of Achievement</h1>
-      <div class="opacity-0 animate-fade-in animate-delay-2 content-section">
-       <p id="hero-name" class="font-serif-display text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6 sm:mb-8" style="letter-spacing: 0.05em; color: #333333;">MORIAH WALLACE</p>
-       <p class="font-script text-2xl sm:text-3xl mb-6 shimmer-accent" style="color: #114488;">Class of 2026</p>
-       <p id="hero-dates" class="font-serif-display text-lg sm:text-xl font-light mb-12 sm:mb-14" style="letter-spacing: 0.03em; color: #6b7280;">May 23–24, 2026</p>
-       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5">
-        <a id="hero-rsvp-btn" href="#rsvp-page" class="btn-primary"> RSVP NOW </a>
-        <a id="hero-wishes-btn" href="#well-wishes" class="btn-secondary"> SEND WELL WISHES </a>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section>
-
-   <!-- RSVP -->
-   <section id="rsvp-page" class="page-section is-hidden">
-    <div class="py-20 sm:py-28 lg:py-36" style="background: #FAFAF8;">
-     <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      <div class="scroll-animate text-center mb-12 sm:mb-16">
-       <h2 class="font-script text-6xl sm:text-7xl lg:text-8xl mb-8 sm:mb-10" style="line-height: 1.3; font-weight: 400; color: #114488;">Join Us</h2>
-       <p class="font-serif-body text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto px-4" style="color: #6b7280; letter-spacing: 0.02em;">We're so excited to celebrate this milestone with you. Please take a moment to RSVP so we can plan accordingly and welcome everyone with care.</p>
-      </div>
-      <div class="scroll-animate scroll-animate-delay-1 content-section text-center">
-       <div class="flex flex-col gap-4 max-w-md mx-auto"><a id="rsvp-ceremony-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary"> RSVP </a></div>
-      </div>
-     </div>
-    </div>
-   </section>
-
-   <!-- CEREMONY -->
-   <section id="ceremony" class="page-section is-hidden">
-    <div class="py-20 sm:py-28 lg:py-36" style="background: #FAFAF8;">
-     <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      <div class="scroll-animate text-center mb-12 sm:mb-16">
-       <h2 class="font-script text-6xl sm:text-7xl lg:text-8xl mb-6 sm:mb-8" style="line-height: 1.3; font-weight: 400; color: #114488;">Ceremony Details</h2>
-      </div>
-      <div class="scroll-animate scroll-animate-delay-1 content-section text-center">
-       <div class="space-y-10 mb-12 sm:mb-14">
-        <div>
-         <p class="font-serif-body text-xs uppercase tracking-widest mb-3" style="color: #9ca3af; letter-spacing: 0.12em; font-weight: 500;">Date</p>
-         <p id="ceremony-date-text" class="font-serif-body text-2xl sm:text-3xl font-light" style="color: #333333; letter-spacing: 0.02em;">Saturday, May 23, 2026</p>
-        </div>
-        <div>
-         <p class="font-serif-body text-xs uppercase tracking-widest mb-3" style="color: #9ca3af; letter-spacing: 0.12em; font-weight: 500;">Time</p>
-         <p id="ceremony-time-text" class="font-serif-body text-2xl sm:text-3xl font-light" style="color: #333333; letter-spacing: 0.02em;">7:00 PM</p>
-        </div>
-        <div>
-         <p class="font-serif-body text-xs uppercase tracking-widest mb-3" style="color: #9ca3af; letter-spacing: 0.12em; font-weight: 500;">Location</p>
-         <p id="ceremony-location-text" class="font-serif-body text-2xl sm:text-3xl font-light" style="color: #333333; letter-spacing: 0.02em;">Landers Center, Southaven, MS</p>
-        </div>
-       </div>
-       <div class="mb-10 sm:mb-12">
-        <p class="font-serif-body text-base leading-relaxed max-w-lg mx-auto" style="color: #6b7280;">The ceremony is open invite. Seating is open and not reserved, so early arrival is strongly recommended.</p>
-       </div>
-       <div><a id="directions-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-secondary"> GET DIRECTIONS </a></div>
-      </div>
-     </div>
-    </div>
-   </section>
-
-   <!-- TRAVEL -->
-   <section id="travel" class="page-section is-hidden">
-    <div class="py-20 sm:py-28 lg:py-36" style="background: #FAFAF8;">
-     <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      <div class="scroll-animate text-center mb-12 sm:mb-16">
-       <h2 class="font-script text-6xl sm:text-7xl lg:text-8xl mb-8 sm:mb-10" style="line-height: 1.3; font-weight: 400; color: #114488;">Travel &amp; Stay</h2>
-       <p class="font-serif-body text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto px-4" style="color: #6b7280; letter-spacing: 0.02em;">For our loved ones traveling from out of town, we've shared a few nearby hotel options for your convenience.</p>
-      </div>
-      <div class="content-section">
-       <div class="space-y-12 sm:space-y-14">
-        <div class="scroll-animate scroll-animate-delay-1 text-center">
-         <h3 class="font-serif-body text-2xl sm:text-3xl font-semibold mb-3" style="color: #114488;">Courtyard by Marriott</h3>
-         <p class="font-serif-body text-base mb-6" style="color: #6b7280;">Southaven</p>
-         <a id="hotel1-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-secondary"> VIEW HOTEL </a>
-        </div>
-        <div class="scroll-animate scroll-animate-delay-2 text-center">
-         <h3 class="font-serif-body text-2xl sm:text-3xl font-semibold mb-3" style="color: #114488;">Fairfield by Marriott</h3>
-         <p class="font-serif-body text-base mb-6" style="color: #6b7280;">Snowden Grove</p>
-         <a id="hotel2-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-secondary"> VIEW HOTEL </a>
-        </div>
-        <div class="scroll-animate scroll-animate-delay-3 text-center">
-         <h3 class="font-serif-body text-2xl sm:text-3xl font-semibold mb-3" style="color: #9ca3af;">Additional Hotel</h3>
-         <p class="font-serif-body text-base mb-6" style="color: #9ca3af;">Coming Soon</p>
-         <span class="inline-flex items-center justify-center gap-2 font-serif-body font-medium px-10 py-4 rounded-full border-2 cursor-not-allowed" style="color: #9ca3af; background: #ffffff; border-color: #e5e7eb; letter-spacing: 0.08em; font-size: 0.875rem;"> COMING SOON </span>
-        </div>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section>
-
-   <!-- GIFTS -->
-   <section id="gifts" class="page-section is-hidden">
-    <div class="py-20 sm:py-28 lg:py-36" style="background: #FAFAF8;">
-     <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      <div class="scroll-animate text-center mb-12 sm:mb-16">
-       <h2 class="font-script text-6xl sm:text-7xl lg:text-8xl mb-4" style="line-height: 1.3; font-weight: 400; color: #114488;">Gifts</h2>
-       <p class="font-serif-body text-base italic mb-8 sm:mb-10" style="color: #9ca3af;">(Optional)</p>
-      </div>
-      <div class="scroll-animate scroll-animate-delay-1 content-section text-center">
-       <div class="mb-12 sm:mb-14">
-        <p class="font-serif-body text-base sm:text-lg font-light leading-relaxed mb-6" style="color: #333333; letter-spacing: 0.02em;">Your presence truly means the world to us, and celebrating this milestone together is the greatest gift of all.</p>
-        <p class="font-serif-body text-base leading-relaxed" style="color: #6b7280;">For those who have asked, we've included a few gift options below for convenience. Gift cards and contributions toward Moriah's next chapter are always appreciated, but never expected.</p>
-      </div>
-       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a id="amazon-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary"> AMAZON WISHLIST </a>
-        <a id="cashapp-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-secondary"> CASH APP </a>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section>
-
-   <!-- WELL WISHES -->
-   <section id="well-wishes" class="page-section is-hidden">
-    <div class="py-20 sm:py-28 lg:py-36" style="background: #FAFAF8;">
-     <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      <div class="scroll-animate text-center mb-8 sm:mb-10">
-       <h2 class="font-script text-6xl sm:text-7xl lg:text-8xl mb-6 sm:mb-8" style="line-height: 1.3; font-weight: 400; color: #114488;">Share Your Well Wishes</h2>
-       <p class="font-serif-body text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto px-4" style="color: #6b7280; letter-spacing: 0.02em;">As Moriah embarks on this exciting new chapter, we'd love to surround her with words of encouragement and love. Please take a moment to leave a note or share your favorite memory with her.</p>
-      </div>
-      <div class="scroll-animate scroll-animate-delay-1 form-card">
-       <iframe
-         id="JotFormIFrame-260325755722053"
-         title="Words of Wisdom & Encouragement"
-         onload="window.parent.scrollTo(0,0)"
-         allowtransparency="true"
-         allow="geolocation; microphone; camera; fullscreen; payment"
-         src="https://form.jotform.com/260325755722053"
-         frameborder="0"
-         style="min-width:100%;max-width:100%;height:539px;border:none;"
-         scrolling="no">
-       </iframe>
-       <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
-       <script>
-         try {
-           window.jotformEmbedHandler(
-             "iframe[id='JotFormIFrame-260325755722053']",
-             "https://form.jotform.com/"
-           );
-         } catch (e) {}
-       </script>
-      </div>
-     </div>
-    </div>
-   </section>
-  </div>
-
-  <script>
-    function showPage(pageId) {
-      document.querySelectorAll('.page-section').forEach(section => {
-        section.classList.add('is-hidden');
-      });
-
-      const targetPage = document.getElementById(pageId);
-      if (targetPage) {
-        targetPage.classList.remove('is-hidden');
-      } else {
-        const home = document.getElementById('home');
-        if (home) home.classList.remove('is-hidden');
+        border: none;
       }
 
-      document.querySelectorAll('[data-nav]').forEach(link => {
-        link.classList.remove('active');
-        const navTarget = link.getAttribute('data-nav');
-        if ((navTarget === 'home' && pageId === 'home') ||
-            (navTarget === 'rsvp' && pageId === 'rsvp-page') ||
-            (navTarget === 'ceremony' && pageId === 'ceremony') ||
-            (navTarget === 'travel' && pageId === 'travel') ||
-            (navTarget === 'gifts' && pageId === 'gifts') ||
-            (navTarget === 'wishes' && pageId === 'well-wishes')) {
-          link.classList.add('active');
+      @media (max-width: 640px) {
+        .content-section {
+          padding: 36px 24px;
+          margin-bottom: 32px;
         }
+        .form-card {
+          padding: 20px;
+          border-radius: 16px;
+        }
+      }
+
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in {
+        animation: fadeInUp 0.6s ease forwards;
+      }
+      .animate-delay-1 { animation-delay: 0.1s; }
+      .animate-delay-2 { animation-delay: 0.15s; }
+      .animate-delay-3 { animation-delay: 0.2s; }
+      .animate-delay-4 { animation-delay: 0.25s; }
+      .animate-delay-5 { animation-delay: 0.3s; }
+      .animate-delay-6 { animation-delay: 0.35s; }
+
+      .scroll-animate {
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+      .scroll-animate.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-size: 0.875rem;
+        letter-spacing: 0.08em;
+        padding: 16px 40px;
+        border-radius: 9999px;
+        border: 2px solid #114488;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-height: 52px;
+        transition: all 0.25s ease;
+        text-align: center;
+      }
+      .btn-primary {
+        background: #114488;
+        color: #ffffff;
+      }
+      .btn-primary:hover {
+        opacity: 0.92;
+        transform: scale(1.02);
+      }
+      .btn-secondary {
+        background: #ffffff;
+        color: #114488;
+      }
+      .btn-secondary:hover {
+        background: #f9f9f7;
+        transform: scale(1.02);
+      }
+
+      @media (max-width: 640px) {
+        .btn-primary, .btn-secondary {
+          width: 100%;
+          padding: 14px 32px;
+          font-size: 0.8125rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="h-full font-serif-body">
+    <div id="app" class="h-full w-full overflow-auto">
+      <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+          <div class="header-grid h-16 sm:h-20 w-full">
+            <div class="flex items-center">
+              <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-600 hover:text-gray-900">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="font-script text-2xl sm:text-3xl header-title" style="color: #114488; letter-spacing: 0.02em; font-weight: 600;">
+              Class of 2026
+            </div>
+
+            <nav class="hidden lg:flex items-center space-x-8 header-nav">
+              <a href="#home" class="nav-link font-sans-ui text-sm font-normal transition-colors active" style="color: #6b7280;" data-nav="home">Home</a>
+              <a href="#rsvp-page" class="nav-link font-sans-ui text-sm font-normal transition-colors" style="color: #6b7280;" data-nav="rsvp">RSVP</a>
+              <a href="#ceremony" class="nav-link font-sans-ui text-sm font-normal transition-colors" style="color: #6b7280;" data-nav="ceremony">Ceremony Details</a>
+              <a href="#travel" class="nav-link font-sans-ui text-sm font-normal transition-colors" style="color: #6b7280;" data-nav="travel">Travel</a>
+              <a href="#gifts" class="nav-link font-sans-ui text-sm font-normal transition-colors" style="color: #6b7280;" data-nav="gifts">Gifts</a>
+              <a href="#well-wishes" class="nav-link font-sans-ui text-sm font-normal transition-colors" style="color: #6b7280;" data-nav="wishes">Well Wishes</a>
+            </nav>
+          </div>
+
+          <div id="mobile-menu" class="hidden lg:hidden pb-6 pt-2">
+            <nav class="flex flex-col space-y-4">
+              <a href="#home" class="font-sans-ui text-sm font-normal py-3 transition-colors" style="color: #6b7280;" data-nav="home">Home</a>
+              <a href="#rsvp-page" class="font-sans-ui text-sm font-normal py-3 transition-colors" style="color: #6b7280;" data-nav="rsvp">RSVP</a>
+              <a href="#ceremony" class="font-sans-ui text-sm font-normal py-3 transition-colors" style="color: #6b7280;" data-nav="ceremony">Ceremony Details</a>
+              <a href="#travel" class="font-sans-ui text-sm font-normal py-3 transition-colors" style="color: #6b7280;" data-nav="travel">Travel</a>
+              <a href="#gifts" class="font-sans-ui text-sm font-normal py-3 transition-colors" style="color: #6b7280;" data-nav="gifts">Gifts</a>
+              <a href="#well-wishes" class="font-sans-ui text-sm font-normal py-3 transition-colors" style="color: #6b7280;" data-nav="wishes">Well Wishes</a>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <!-- HOME -->
+      <section id="home" class="page-section">
+        <div class="py-20 sm:py-32 lg:py-40" style="background: #FAFAF8; position: relative; overflow: hidden;">
+          <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center" style="position: relative; z-index: 1;">
+            <h1 class="opacity-0 animate-fade-in font-script text-6xl sm:text-7xl lg:text-8xl mb-10 sm:mb-14 lg:mb-16 shimmer-accent" style="line-height: 1.3; font-weight: 400; color: #114488;">A Celebration of Achievement</h1>
+            <div class="opacity-0 animate-fade-in animate-delay-2 content-section">
+              <p id="hero-name" class="font-serif-display text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6 sm:mb-8" style="letter-spacing: 0.05em; color: #333333;">MORIAH WALLACE</p>
+              <p class="font-script text-2xl sm:text-3xl mb-6 shimmer-accent" style="color: #114488;">Class of 2026</p>
+              <p id="hero-dates" class="font-serif-display text-lg sm:text-xl font-light mb-12 sm:mb-14" style="letter-spacing: 0.03em; color: #6b7280;">May 23–24, 2026</p>
+              <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5">
+                <a id="hero-rsvp-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary"> RSVP NOW </a>
+                <a id="hero-wishes-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-secondary"> SEND WELL WISHES </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RSVP -->
+      <section id="rsvp-page" class="page-section is-hidden">
+        <div class="py-20 sm:py-28 lg:py-36" style="background: #FAFAF8;">
+          <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="scroll-animate text-center mb-12 sm:mb-16">
+              <h2 class="font-script text-6xl sm:text-7xl lg:text-8xl mb-8 sm:mb-10" style="line-height: 1.3; font-weight: 400; color: #114488;">Join Us</h2>
+              <p class="font-serif-body text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto px-4" style="color: #6b7280; letter-spacing: 0.02em;">We're so excited to celebrate this milestone with you. Please take a moment to RSVP so we can plan accordingly and welcome everyone with care.</p>
+            </div>
+            <div class="scroll-animate scroll-animate-delay-1 content-section text-center">
+              <div class="flex flex-col gap-4 max-w-md mx-auto">
+                <a id="rsvp-ceremony-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary"> RSVP </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CEREMONY -->
+      <section id="ceremony" class="page-section is-hidden">
+        <div class="py-20 sm:py-28 lg:py-36" style="background: #FAFAF8;">
+          <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="scroll-animate text-center mb-12 sm:mb-16">
+              <h2 class="font-script text-6xl sm:text-7xl lg:text-8xl mb-6 sm:mb-8" style="line-height: 1.3; font-weight: 400; color: #114488;">Ceremony Details</h2>
+            </div>
+            <div class="scroll-animate scroll-animate-delay-1 content-section text-center">
+              <div class="space-y-10 mb-12 sm:mb-14">
+                <div>
+                  <p class="font-serif-body text-xs uppercase tracking-widest mb-3" style="color: #9ca3af; letter-spacing: 0.12em; font-weight: 500;">Date</p>
+                  <p id="ceremony-date-text" class="font-serif-body text-2xl sm:text-3xl font-light" style="color: #333333; letter-spacing: 0.02em;">Saturday, May 23, 2026</p>
+                </div>
+                <div>
+                  <p class="font-serif-body text-xs uppercase tracking-widest mb-3" style="color: #9ca3af; letter-spacing: 0.12em; font-weight: 500;">Time</p>
+                  <p id="ceremony-time-text" class="font-serif-body text-2xl sm:text-3xl font-light" style="color: #333333; letter-spacing: 0.02em;">7:00 PM</p>
+                </div>
+                <div>
+                  <p class="font-serif-body text-xs uppercase tracking-widest mb-3" style="color: #9ca3af; letter-spacing: 0.12em; font-weight: 500;">Location</p>
+                  <p id="ceremony-location-text" class="font-serif-body text-2xl sm:text-3xl font-light" style="color: #333333; letter-spacing: 0.02em;">Landers Center, Southaven, MS</p>
+                </div>
+              </div>
+              <div class="mb-10 sm:mb-12">
+                <p class="font-serif-body text-base leading-relaxed max-w-lg mx-auto" style="color: #6b7280;">The ceremony is open invite. Seating is open and not reserved, so early arrival is strongly recommended.</p>
+              </div>
+              <div>
+                <a id="directions-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-secondary"> GET DIRECTIONS </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRAVEL -->
+      <section id="travel" class="page-section is-hidden">
+        <div class="py-20 sm:py-28 lg:py-36" style="background: #FAFAF8;">
+          <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="scroll-animate text-center mb-12 sm:mb-16">
+              <h2 class="font-script text-6xl sm:text-7xl lg:text-8xl mb-8 sm:mb-10" style="line-height: 1.3; font-weight: 400; color: #114488;">Travel &amp; Stay</h2>
+              <p class="font-serif-body text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto px-4" style="color: #6b7280; letter-spacing: 0.02em;">For our loved ones traveling from out of town, we've shared a few nearby hotel options for your convenience.</p>
+            </div>
+            <div class="content-section">
+              <div class="space-y-12 sm:space-y-14">
+                <div class="scroll-animate scroll-animate-delay-1 text-center">
+                  <h3 class="font-serif-body text-2xl sm:text-3xl font-semibold mb-3" style="color: #114488;">Courtyard by Marriott</h3>
+                  <p class="font-serif-body text-base mb-6" style="color: #6b7280;">Southaven</p>
+                  <a id="hotel1-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-secondary"> VIEW HOTEL </a>
+                </div>
+                <div class="scroll-animate scroll-animate-delay-2 text-center">
+                  <h3 class="font-serif-body text-2xl sm:text-3xl font-semibold mb-3" style="color: #114488;">Fairfield by Marriott</h3>
+                  <p class="font-serif-body text-base mb-6" style="color: #6b7280;">Snowden Grove</p>
+                  <a id="hotel2-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-secondary"> VIEW HOTEL </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GIFTS -->
+      <section id="gifts" class="page-section is-hidden">
+        <div class="py-20 sm:py-28 lg:py-36" style="background: #FAFAF8;">
+          <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="scroll-animate text-center mb-12 sm:mb-16">
+              <h2 class="font-script text-6xl sm:text-7xl lg:text-8xl mb-4" style="line-height: 1.3; font-weight: 400; color: #114488;">Gifts</h2>
+              <p class="font-serif-body text-base italic mb-8 sm:mb-10" style="color: #9ca3af;">(Optional)</p>
+            </div>
+            <div class="scroll-animate scroll-animate-delay-1 content-section text-center">
+              <div class="mb-12 sm:mb-14">
+                <p class="font-serif-body text-base sm:text-lg font-light leading-relaxed mb-6" style="color: #333333;">Your presence truly means the world to us, and celebrating this milestone together is the greatest gift of all.</p>
+                <p class="font-serif-body text-base leading-relaxed" style="color: #6b7280;">For those who have asked, we've included a few gift options below for convenience. Gift cards and contributions toward Moriah's next chapter are always appreciated, but never expected.</p>
+              </div>
+              <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a id="amazon-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary"> AMAZON WISHLIST </a>
+                <a id="cashapp-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-secondary"> CASH APP </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WELL WISHES -->
+      <section id="well-wishes" class="page-section is-hidden">
+        <div class="py-20 sm:py-28 lg:py-36" style="background: #FAFAF8;">
+          <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="scroll-animate text-center mb-8 sm:mb-10">
+              <h2 class="font-script text-6xl sm:text-7xl lg:text-8xl mb-6 sm:mb-8" style="line-height: 1.3; font-weight: 400; color: #114488;">Share Your Well Wishes</h2>
+              <p class="font-serif-body text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto px-4" style="color: #6b7280; letter-spacing: 0.02em;">As Moriah embarks on this exciting new chapter, we'd love to surround her with words of encouragement and love. Please take a moment to leave a note or share your favorite memory with her.</p>
+            </div>
+
+            <div class="scroll-animate scroll-animate-delay-1 form-card">
+              <iframe
+                id="JotFormIFrame-260325755722053"
+                title="Words of Wisdom & Encouragement"
+                onload="window.parent.scrollTo(0,0)"
+                allowtransparency="true"
+                allow="geolocation; microphone; camera; fullscreen; payment"
+                src="https://form.jotform.com/260325755722053"
+                frameborder="0"
+                style="min-width:100%;max-width:100%;height:539px;border:none;"
+                scrolling="no">
+              </iframe>
+              <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+              <script>
+                try {
+                  window.jotformEmbedHandler(
+                    "iframe[id='JotFormIFrame-260325755722053']",
+                    "https://form.jotform.com/"
+                  );
+                } catch (e) {}
+              </script>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      const defaultConfig = {
+        graduate_name: 'Moriah Wallace',
+        graduation_dates: 'May 23–24, 2026',
+        ceremony_date: 'Saturday, May 23, 2026',
+        ceremony_time: '7:00 PM',
+        ceremony_location: 'Landers Center, Southaven, MS',
+        rsvp_link: '#',
+        well_wishes_link: '#',
+        maps_link: '#',
+        amazon_link: '#',
+        cashapp_link: '#'
+      };
+
+      const setText = (id, value, transform) => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.textContent = transform ? transform(value) : value;
+        }
+      };
+      const setHref = (id, value) => {
+        const el = document.getElementById(id);
+        if (el) el.href = value;
+      };
+
+      function updateUI(cfg) {
+        setText('hero-name', cfg.graduate_name || defaultConfig.graduate_name, (v) => v.toUpperCase());
+        setText('hero-dates', cfg.graduation_dates || defaultConfig.graduation_dates);
+        setText('ceremony-date-text', cfg.ceremony_date || defaultConfig.ceremony_date);
+        setText('ceremony-time-text', cfg.ceremony_time || defaultConfig.ceremony_time);
+        setText('ceremony-location-text', cfg.ceremony_location || defaultConfig.ceremony_location);
+
+        const rsvpLink = cfg.rsvp_link || defaultConfig.rsvp_link;
+        setHref('hero-rsvp-btn', rsvpLink);
+        setHref('rsvp-ceremony-btn', rsvpLink);
+
+        const wishesLink = cfg.well_wishes_link || defaultConfig.well_wishes_link;
+        setHref('hero-wishes-btn', wishesLink);
+
+        setHref('directions-btn', cfg.maps_link || defaultConfig.maps_link);
+        setHref('amazon-btn', cfg.amazon_link || defaultConfig.amazon_link);
+        setHref('cashapp-btn', cfg.cashapp_link || defaultConfig.cashapp_link);
+        setHref('hotel1-btn', cfg.hotel1_link || '#');
+        setHref('hotel2-btn', cfg.hotel2_link || '#');
+      }
+
+      const navMap = {
+        'home': 'home',
+        'rsvp-page': 'rsvp',
+        'ceremony': 'ceremony',
+        'travel': 'travel',
+        'gifts': 'gifts',
+        'well-wishes': 'wishes'
+      };
+
+      function showPage(pageId) {
+        const validId = document.getElementById(pageId) ? pageId : 'home';
+
+        document.querySelectorAll('.page-section').forEach(section => {
+          section.classList.add('is-hidden');
+        });
+
+        const targetPage = document.getElementById(validId);
+        if (targetPage) {
+          targetPage.classList.remove('is-hidden');
+        }
+
+        document.querySelectorAll('[data-nav]').forEach(link => {
+          const navTarget = link.getAttribute('data-nav');
+          link.classList.toggle('active', navTarget === navMap[validId]);
+        });
+
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenu) mobileMenu.classList.add('hidden');
+
+        const app = document.getElementById('app');
+        if (app) app.scrollTop = 0;
+        window.scrollTo(0, 0);
+
+        observeAnimations();
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        updateUI(defaultConfig);
+
+        const initial = (location.hash || '#home').replace('#', '');
+        showPage(initial);
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href && href.startsWith('#') && href.length > 1) {
+              e.preventDefault();
+              const pageId = href.substring(1);
+              showPage(pageId);
+              history.pushState(null, '', '#' + pageId);
+            }
+          });
+        });
+
+        const mobileButton = document.getElementById('mobile-menu-btn');
+        if (mobileButton) {
+          mobileButton.addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu) menu.classList.toggle('hidden');
+          });
+        }
+
+        window.addEventListener('hashchange', () => {
+          const id = (location.hash || '#home').replace('#', '');
+          showPage(id);
+        });
+
+        observeAnimations();
       });
 
-      const mobileMenu = document.getElementById('mobile-menu');
-      if (mobileMenu) mobileMenu.classList.add('hidden');
-
-      document.getElementById('app').scrollTop = 0;
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href && href.startsWith('#') && href.length > 1) {
-          e.preventDefault();
-          const pageId = href.substring(1);
-          showPage(pageId);
-          history.replaceState(null, '', href);
+      let observer;
+      function observeAnimations() {
+        const elements = document.querySelectorAll('.scroll-animate');
+        if (!('IntersectionObserver' in window)) {
+          elements.forEach(el => el.classList.add('visible'));
+          return;
         }
-      });
-    });
 
-    window.addEventListener('hashchange', () => {
-      const hash = window.location.hash.replace('#', '');
-      if (hash) showPage(hash);
-    });
+        if (!observer) {
+          observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { root: null, rootMargin: '0px', threshold: 0.1 });
+        }
 
-    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-      const menu = document.getElementById('mobile-menu');
-      menu.classList.toggle('hidden');
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const initial = window.location.hash.replace('#', '') || 'home';
-      showPage(initial);
-    });
-  </script>
- </body>
+        elements.forEach(el => {
+          if (!el.classList.contains('visible')) observer.observe(el);
+        });
+      }
+    </script>
+  </body>
 </html>
