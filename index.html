@@ -66,10 +66,32 @@
         z-index: -1;
       }
 
+      .section-block {
+        padding: 64px 0;
+      }
+      @media (min-width: 640px) {
+        .section-block {
+          padding: 80px 0;
+        }
+      }
+      @media (min-width: 1024px) {
+        .section-block {
+          padding: 96px 0;
+        }
+      }
+
+      .section-divider {
+        height: 1px;
+        max-width: 840px;
+        margin: 0 auto;
+        background: #e5e7eb;
+        opacity: 0.7;
+      }
+
       .content-section {
         background: #ffffff;
-        padding: 48px 32px;
-        margin: 0 auto 40px;
+        padding: 40px 28px;
+        margin: 0 auto 28px;
         max-width: 640px;
       }
 
@@ -88,8 +110,8 @@
 
       @media (max-width: 640px) {
         .content-section {
-          padding: 36px 24px;
-          margin-bottom: 32px;
+          padding: 32px 22px;
+          margin-bottom: 24px;
         }
         .form-card {
           padding: 20px;
@@ -139,6 +161,23 @@
           font-size: 0.8125rem;
         }
       }
+
+      .scroll-animate {
+        opacity: 0;
+        transform: translateY(18px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .scroll-animate.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .scroll-animate {
+          opacity: 1 !important;
+          transform: none !important;
+          transition: none !important;
+        }
+      }
     </style>
   </head>
 
@@ -164,161 +203,178 @@
       </header>
 
       <!-- HOME -->
-      <section id="home">
-        <div class="py-20 sm:py-32 lg:py-40" style="background: #FAFAF8;">
-          <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-<h1 class="font-script text-6xl sm:text-7xl lg:text-8xl shimmer-accent text-center" style="line-height: 1.15; font-weight: 400; color: #114488; letter-spacing: 0.01em; margin-bottom: 1.75rem;">
-  <span class="block" style="margin-bottom: 0.2em;">A</span>
-  <span class="block" style="margin-bottom: 0.2em;">Celebration</span>
-  <span class="block">of Achievement</span>
-</h1>
-<p class="font-serif-body text-base sm:text-lg font-light leading-relaxed text-center max-w-2xl mx-auto mb-8" style="color: #6b7280; letter-spacing: 0.02em;">
-  for Moriah A. Wallace
-</p>
-            <div class="content-section">
-              <p id="hero-name" class="font-serif-display text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6 sm:mb-8" style="letter-spacing: 0.05em; color: #333333;">MORIAH WALLACE</p>
-              <p class="font-script text-2xl sm:text-3xl mb-6 shimmer-accent" style="color: #114488;">Class of 2026</p>
-              <p id="hero-dates" class="font-serif-display text-lg sm:text-xl font-light mb-12 sm:mb-14" style="letter-spacing: 0.03em; color: #6b7280;">May 23–24, 2026</p>
-              <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5">
-                <a id="hero-rsvp-btn" href="https://form.jotform.com/260324809688063" target="_blank" rel="noopener noreferrer" class="btn-primary"> RSVP NOW </a>
-                <a id="hero-wishes-btn" href="#well-wishes" class="btn-secondary"> SEND WELL WISHES </a>
-              </div>
+      <section id="home" class="section-block">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center scroll-animate">
+          <h1 class="font-script text-5xl sm:text-6xl lg:text-7xl shimmer-accent text-center" style="line-height: 1.2; font-weight: 400; color: #114488; letter-spacing: 0.01em; margin-bottom: 0.4rem;">
+            A Celebration of Achievement
+          </h1>
+          <p class="font-serif-body text-sm sm:text-base font-light text-center" style="color: #6b7280; letter-spacing: 0.04em; text-transform: uppercase; margin: 0.1rem 0 0.1rem 0;">
+            for
+          </p>
+          <p class="font-serif-display text-xl sm:text-2xl lg:text-3xl font-medium text-center" style="color: #333333; letter-spacing: 0.04em; white-space: nowrap; margin-top: 0.2rem; margin-bottom: 1.5rem;">
+            Moriah A. Wallace
+          </p>
+
+          <div class="content-section">
+            <p id="hero-dates" class="font-serif-display text-lg sm:text-xl font-light mb-10" style="letter-spacing: 0.03em; color: #6b7280;">
+              May 23–24, 2026 • Class of 2026
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5">
+              <a id="hero-rsvp-btn" href="https://form.jotform.com/260324809688063" target="_blank" rel="noopener noreferrer" class="btn-primary"> RSVP NOW </a>
+              <a id="hero-wishes-btn" href="#well-wishes" class="btn-secondary"> SEND WELL WISHES </a>
             </div>
           </div>
         </div>
       </section>
+
+      <div class="section-divider" aria-hidden="true"></div>
 
       <!-- RSVP -->
-      <section id="rsvp-page">
-        <div class="py-20 sm:py-28 lg:py-36">
-          <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-12 sm:mb-16">
-              <h2 class="font-script text-6xl sm:text-7xl lg:text-8xl mb-8 sm:mb-10" style="color: #114488;">Join Us</h2>
-              <p class="font-serif-body text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto px-4" style="color: #6b7280;">We're so excited to celebrate this milestone with you. Please take a moment to RSVP so we can plan accordingly and welcome everyone with care.</p>
-            </div>
-            <div class="content-section text-center">
-              <div class="flex flex-col gap-4 max-w-md mx-auto">
-                <a id="rsvp-ceremony-btn" href="https://form.jotform.com/260324809688063" target="_blank" rel="noopener noreferrer" class="btn-primary"> RSVP </a>
-              </div>
+      <section id="rsvp-page" class="section-block">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 scroll-animate">
+          <div class="text-center mb-10">
+            <h2 class="font-script text-5xl sm:text-6xl lg:text-7xl mb-6" style="color: #114488;">Join Us</h2>
+            <p class="font-serif-body text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto px-4" style="color: #6b7280;">We're so excited to celebrate this milestone with you. Please take a moment to RSVP so we can plan accordingly and welcome everyone with care.</p>
+          </div>
+          <div class="content-section text-center">
+            <div class="flex flex-col gap-4 max-w-md mx-auto">
+              <a id="rsvp-ceremony-btn" href="https://form.jotform.com/260324809688063" target="_blank" rel="noopener noreferrer" class="btn-primary"> RSVP </a>
             </div>
           </div>
         </div>
       </section>
+
+      <div class="section-divider" aria-hidden="true"></div>
 
       <!-- CEREMONY -->
-      <section id="ceremony">
-        <div class="py-20 sm:py-28 lg:py-36">
-          <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-12 sm:mb-16">
-              <h2 class="font-script text-6xl sm:text-7xl lg:text-8xl mb-6 sm:mb-8" style="color: #114488;">Ceremony Details</h2>
-            </div>
-            <div class="content-section text-center">
-              <div class="space-y-10 mb-12 sm:mb-14">
-                <div>
-                  <p class="font-serif-body text-xs uppercase tracking-widest mb-3" style="color: #9ca3af; font-weight: 500;">Date</p>
-                  <p id="ceremony-date-text" class="font-serif-body text-2xl sm:text-3xl font-light" style="color: #333333;">Saturday, May 23, 2026</p>
-                </div>
-                <div>
-                  <p class="font-serif-body text-xs uppercase tracking-widest mb-3" style="color: #9ca3af; font-weight: 500;">Time</p>
-                  <p id="ceremony-time-text" class="font-serif-body text-2xl sm:text-3xl font-light" style="color: #333333;">7:00 PM</p>
-                </div>
-                <div>
-                  <p class="font-serif-body text-xs uppercase tracking-widest mb-3" style="color: #9ca3af; font-weight: 500;">Location</p>
-                  <p id="ceremony-location-text" class="font-serif-body text-2xl sm:text-3xl font-light" style="color: #333333;">Landers Center, Southaven, MS</p>
-                </div>
-              </div>
-              <div class="mb-10 sm:mb-12">
-                <p class="font-serif-body text-base leading-relaxed max-w-lg mx-auto" style="color: #6b7280;">The ceremony is open invite. Seating is open and not reserved, so early arrival is strongly recommended.</p>
+      <section id="ceremony" class="section-block">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 scroll-animate">
+          <div class="text-center mb-10">
+            <h2 class="font-script text-5xl sm:text-6xl lg:text-7xl mb-6" style="color: #114488;">Ceremony Details</h2>
+          </div>
+          <div class="content-section text-center">
+            <div class="space-y-10 mb-12">
+              <div>
+                <p class="font-serif-body text-xs uppercase tracking-widest mb-3" style="color: #9ca3af; font-weight: 500;">Date</p>
+                <p id="ceremony-date-text" class="font-serif-body text-2xl sm:text-3xl font-light" style="color: #333333;">Saturday, May 23, 2026</p>
               </div>
               <div>
-                <a id="directions-btn" href="https://www.google.com/maps/place/Landers+Center/@34.9270516,-89.9965255,17z/data=!3m1!4b1!4m6!3m5!1s0x887f8a7494c233fb:0x61f8052d67d35f18!8m2!3d34.9270516!4d-89.9965255!16zL20vMDY4djgw?entry=ttu&g_ep=EgoyMDI2MDEyOC4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D" target="_blank" rel="noopener noreferrer" class="btn-secondary"> GET DIRECTIONS </a>
+                <p class="font-serif-body text-xs uppercase tracking-widest mb-3" style="color: #9ca3af; font-weight: 500;">Time</p>
+                <p id="ceremony-time-text" class="font-serif-body text-2xl sm:text-3xl font-light" style="color: #333333;">7:00 PM</p>
               </div>
+              <div>
+                <p class="font-serif-body text-xs uppercase tracking-widest mb-3" style="color: #9ca3af; font-weight: 500;">Location</p>
+                <p id="ceremony-location-text" class="font-serif-body text-2xl sm:text-3xl font-light" style="color: #333333;">Landers Center, Southaven, MS</p>
+              </div>
+            </div>
+            <div class="mb-10">
+              <p class="font-serif-body text-base leading-relaxed max-w-lg mx-auto" style="color: #6b7280;">The ceremony is open invite. Seating is open and not reserved, so early arrival is strongly recommended.</p>
+            </div>
+            <div>
+              <a id="directions-btn" href="https://www.google.com/maps/place/Landers+Center/@34.9270516,-89.9965255,17z/data=!3m1!4b1!4m6!3m5!1s0x887f8a7494c233fb:0x61f8052d67d35f18!8m2!3d34.9270516!4d-89.9965255!16zL20vMDY4djgw?entry=ttu&g_ep=EgoyMDI2MDEyOC4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D" target="_blank" rel="noopener noreferrer" class="btn-secondary"> GET DIRECTIONS </a>
             </div>
           </div>
         </div>
       </section>
+
+      <div class="section-divider" aria-hidden="true"></div>
 
       <!-- TRAVEL -->
-      <section id="travel">
-        <div class="py-20 sm:py-28 lg:py-36">
-          <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-12 sm:mb-16">
-              <h2 class="font-script text-6xl sm:text-7xl lg:text-8xl mb-8 sm:mb-10" style="color: #114488;">Travel &amp; Stay</h2>
-              <p class="font-serif-body text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto px-4" style="color: #6b7280;">For our loved ones traveling from out of town, we've shared a few nearby hotel options for your convenience.</p>
-            </div>
-            <div class="content-section">
-              <div class="space-y-12 sm:space-y-14">
-                <div class="text-center">
-                  <h3 class="font-serif-body text-2xl sm:text-3xl font-semibold mb-3" style="color: #114488;">Courtyard by Marriott</h3>
-                  <p class="font-serif-body text-base mb-6" style="color: #6b7280;">Southaven</p>
-                  <a id="hotel1-btn" href="https://www.marriott.com/en-us/hotels/memhv-courtyard-memphis-southaven/overview/" target="_blank" rel="noopener noreferrer" class="btn-secondary"> VIEW HOTEL </a>
-                </div>
-                <div class="text-center">
-                  <h3 class="font-serif-body text-2xl sm:text-3xl font-semibold mb-3" style="color: #114488;">Fairfield by Marriott</h3>
-                  <p class="font-serif-body text-base mb-6" style="color: #6b7280;">Snowden Grove</p>
-                  <a id="hotel2-btn" href="https://www.marriott.com/en-us/hotels/memsf-fairfield-inn-and-suites-southaven-snowden-grove/overview/" target="_blank" rel="noopener noreferrer" class="btn-secondary"> VIEW HOTEL </a>
-                </div>
+      <section id="travel" class="section-block">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 scroll-animate">
+          <div class="text-center mb-10">
+            <h2 class="font-script text-5xl sm:text-6xl lg:text-7xl mb-6" style="color: #114488;">Travel &amp; Stay</h2>
+            <p class="font-serif-body text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto px-4" style="color: #6b7280;">For our loved ones traveling from out of town, we've shared a few nearby hotel options for your convenience.</p>
+          </div>
+          <div class="content-section">
+            <div class="space-y-12 sm:space-y-14">
+              <div class="text-center">
+                <h3 class="font-serif-body text-2xl sm:text-3xl font-semibold mb-3" style="color: #114488;">Courtyard by Marriott</h3>
+                <p class="font-serif-body text-base mb-6" style="color: #6b7280;">Southaven</p>
+                <a id="hotel1-btn" href="https://www.marriott.com/en-us/hotels/memhv-courtyard-memphis-southaven/overview/" target="_blank" rel="noopener noreferrer" class="btn-secondary"> VIEW HOTEL </a>
+              </div>
+              <div class="text-center">
+                <h3 class="font-serif-body text-2xl sm:text-3xl font-semibold mb-3" style="color: #114488;">Fairfield by Marriott</h3>
+                <p class="font-serif-body text-base mb-6" style="color: #6b7280;">Snowden Grove</p>
+                <a id="hotel2-btn" href="https://www.marriott.com/en-us/hotels/memsf-fairfield-inn-and-suites-southaven-snowden-grove/overview/" target="_blank" rel="noopener noreferrer" class="btn-secondary"> VIEW HOTEL </a>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      <div class="section-divider" aria-hidden="true"></div>
 
       <!-- GIFTS -->
-      <section id="gifts">
-        <div class="py-20 sm:py-28 lg:py-36">
-          <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-12 sm:mb-16">
-              <h2 class="font-script text-6xl sm:text-7xl lg:text-8xl mb-4" style="color: #114488;">Gifts</h2>
-              <p class="font-serif-body text-base italic mb-8 sm:mb-10" style="color: #9ca3af;">(Optional)</p>
+      <section id="gifts" class="section-block">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 scroll-animate">
+          <div class="text-center mb-10">
+            <h2 class="font-script text-5xl sm:text-6xl lg:text-7xl mb-4" style="color: #114488;">Gifts</h2>
+            <p class="font-serif-body text-base italic mb-8 sm:mb-10" style="color: #9ca3af;">(Optional)</p>
+          </div>
+          <div class="content-section text-center">
+            <div class="mb-10">
+              <p class="font-serif-body text-base sm:text-lg font-light leading-relaxed mb-6" style="color: #333333;">Your presence truly means the world to us, and celebrating this milestone together is the greatest gift of all.</p>
+              <p class="font-serif-body text-base leading-relaxed" style="color: #6b7280;">For those who have asked, we've included a few gift options below for convenience. Gift cards and contributions toward Moriah's next chapter are always appreciated, but never expected.</p>
             </div>
-            <div class="content-section text-center">
-              <div class="mb-12 sm:mb-14">
-                <p class="font-serif-body text-base sm:text-lg font-light leading-relaxed mb-6" style="color: #333333;">Your presence truly means the world to us, and celebrating this milestone together is the greatest gift of all.</p>
-                <p class="font-serif-body text-base leading-relaxed" style="color: #6b7280;">For those who have asked, we've included a few gift options below for convenience. Gift cards and contributions toward Moriah's next chapter are always appreciated, but never expected.</p>
-              </div>
-              <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a id="amazon-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary"> AMAZON WISHLIST </a>
-                <a id="cashapp-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-secondary"> CASH APP </a>
-              </div>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a id="amazon-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary"> AMAZON WISHLIST </a>
+              <a id="cashapp-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-secondary"> CASH APP </a>
             </div>
           </div>
         </div>
       </section>
 
+      <div class="section-divider" aria-hidden="true"></div>
+
       <!-- WELL WISHES -->
-      <section id="well-wishes">
-        <div class="py-20 sm:py-28 lg:py-36">
-          <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-8 sm:mb-10">
-              <h2 class="font-script text-6xl sm:text-7xl lg:text-8xl mb-6 sm:mb-8" style="color: #114488;">Share Your Well Wishes</h2>
-              <p class="font-serif-body text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto px-4" style="color: #6b7280;">As Moriah embarks on this exciting new chapter, we'd love to surround her with words of encouragement and love. Please take a moment to leave a note or share your favorite memory with her.</p>
-            </div>
-            <div class="form-card">
-              <iframe
-                id="JotFormIFrame-260325755722053"
-                title="Words of Wisdom & Encouragement"
-                onload="window.parent.scrollTo(0,0)"
-                allowtransparency="true"
-                allow="geolocation; microphone; camera; fullscreen; payment"
-                src="https://form.jotform.com/260325755722053"
-                frameborder="0"
-                style="min-width:100%;max-width:100%;height:539px;border:none;"
-                scrolling="no">
-              </iframe>
-              <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
-              <script>
-                try {
-                  window.jotformEmbedHandler(
-                    "iframe[id='JotFormIFrame-260325755722053']",
-                    "https://form.jotform.com/"
-                  );
-                } catch (e) {}
-              </script>
-            </div>
+      <section id="well-wishes" class="section-block">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 scroll-animate">
+          <div class="text-center mb-8 sm:mb-10">
+            <h2 class="font-script text-5xl sm:text-6xl lg:text-7xl mb-6 sm:mb-8" style="color: #114488;">Share Your Well Wishes</h2>
+            <p class="font-serif-body text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto px-4" style="color: #6b7280;">As Moriah embarks on this exciting new chapter, we'd love to surround her with words of encouragement and love. Please take a moment to leave a note or share your favorite memory with her.</p>
+          </div>
+          <div class="form-card">
+            <iframe
+              id="JotFormIFrame-260325755722053"
+              title="Words of Wisdom & Encouragement"
+              onload="window.parent.scrollTo(0,0)"
+              allowtransparency="true"
+              allow="geolocation; microphone; camera; fullscreen; payment"
+              src="https://form.jotform.com/260325755722053"
+              frameborder="0"
+              style="min-width:100%;max-width:100%;height:539px;border:none;"
+              scrolling="no">
+            </iframe>
+            <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+            <script>
+              try {
+                window.jotformEmbedHandler(
+                  "iframe[id='JotFormIFrame-260325755722053']",
+                  "https://form.jotform.com/"
+                );
+              } catch (e) {}
+            </script>
           </div>
         </div>
       </section>
     </div>
+
+    <script>
+      const elements = document.querySelectorAll('.scroll-animate');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+        elements.forEach(el => observer.observe(el));
+      } else {
+        elements.forEach(el => el.classList.add('visible'));
+      }
+    </script>
   </body>
 </html>
